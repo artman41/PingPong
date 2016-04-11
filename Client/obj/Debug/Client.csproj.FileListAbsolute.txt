@@ -1,0 +1,10 @@
+C:\Users\Tyler\AppData\Local\Temporary Projects\Client\bin\Debug\Client.exe.config
+d:\Tyler\Documents\Visual Studio 2015\Projects\Client\Client\bin\Debug\Client.exe.config
+D:\Tyler\Documents\Visual Studio 2015\Projects\PingPong\Client\bin\Debug\Client.exe.config
+D:\Tyler\Documents\Visual Studio 2015\Projects\PingPong\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
+D:\Tyler\Documents\Visual Studio 2015\Projects\PingPong\Client\bin\Debug\Client.exe
+D:\Tyler\Documents\Visual Studio 2015\Projects\PingPong\Client\bin\Debug\Client.pdb
+D:\Tyler\Documents\Visual Studio 2015\Projects\PingPong\Client\bin\Debug\Common.dll
+D:\Tyler\Documents\Visual Studio 2015\Projects\PingPong\Client\bin\Debug\Common.pdb
+D:\Tyler\Documents\Visual Studio 2015\Projects\PingPong\Client\obj\Debug\Client.exe
+D:\Tyler\Documents\Visual Studio 2015\Projects\PingPong\Client\obj\Debug\Client.pdb
