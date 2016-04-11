@@ -1,8 +1,0 @@
-D:\Tyler\Documents\Visual Studio 2015\Projects\PingPong\Server\bin\Debug\Server.exe.config
-D:\Tyler\Documents\Visual Studio 2015\Projects\PingPong\Server\bin\Debug\Server.exe
-D:\Tyler\Documents\Visual Studio 2015\Projects\PingPong\Server\bin\Debug\Server.pdb
-D:\Tyler\Documents\Visual Studio 2015\Projects\PingPong\Server\bin\Debug\Common.dll
-D:\Tyler\Documents\Visual Studio 2015\Projects\PingPong\Server\bin\Debug\Common.pdb
-D:\Tyler\Documents\Visual Studio 2015\Projects\PingPong\Server\obj\Debug\Server.csprojResolveAssemblyReference.cache
-D:\Tyler\Documents\Visual Studio 2015\Projects\PingPong\Server\obj\Debug\Server.exe
-D:\Tyler\Documents\Visual Studio 2015\Projects\PingPong\Server\obj\Debug\Server.pdb
