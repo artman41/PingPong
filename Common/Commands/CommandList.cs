@@ -11,8 +11,8 @@ namespace Common.Commands {
 
     public class CommandList {
 
-        public static readonly Command[] CommonCommands = { new Help(), new FontColour(), new BackColour(), new Clear(), new Exit()};
-        public static readonly Command[] ClientCommands = { new Connect(), new Say(), new Disconnect()};
+        public static readonly Command[] CommonCommands = { new Help(), new Processes(), new KillProcess(), new Say(), new FontColour(), new BackColour(), new Clear(), new Exit()};
+        public static readonly Command[] ClientCommands = { new Connect(), new Disconnect()};
         public static readonly Command[] ServerCommands = { new Start(), new Configure(), new Stop()};
 
     }

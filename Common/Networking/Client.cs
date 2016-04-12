@@ -49,17 +49,20 @@ namespace Common.Networking {
             this.CanRun = true;
 
             this.Subscriber = SubConnect(ip.ToString(), port.ToString());
-            Console.WriteLine(String.Format("Client Listening at {0}", this.Subscriber.LastEndpoint));
+            this.Subscriber.Subscribe("A");
+            Console.WriteLine(String.Format("-- Client Listening at {0}", this.Subscriber.LastEndpoint));
 
             this.Publisher = PubHost(ip.ToString(), (port-1).ToString());
-            Console.WriteLine(String.Format("Client Connected at {0}", this.Publisher.LastEndpoint));
+            Console.WriteLine(String.Format("-- Client Connected at {0}", this.Publisher.LastEndpoint));
 
-            this.MessageListener = new System.Threading.Thread(() => getMessages(ip, port, this.Subscriber));
+            this.MessageListener = new System.Threading.Thread(() => GetMessages(ip, port, this.Subscriber));
             this.MessageListener.Start();
         }
 
         public void Disconnect() {
             this.CanRun = false;
+            this.Publisher.Close();
+            this.Subscriber.Close();
             Console.WriteLine("Connection Closed!");
             this.MessageListener.Abort();
             Console.WriteLine("Listener Stopped!");

@@ -146,12 +146,13 @@ namespace Common.Networking {
             this.CanRun = true;
 
             this.Subscriber = SubConnect(this.IP.ToString(), (this.Port - 1).ToString());
-            Console.WriteLine(String.Format("Server Listening at {0}", this.Subscriber.LastEndpoint));
+            this.Subscriber.Subscribe("A");
+            Console.WriteLine(String.Format("-- Server Listening at {0}", this.Subscriber.LastEndpoint));
 
             this.Publisher = PubHost(this.IP.ToString(), this.Port.ToString());
-            Console.WriteLine(String.Format("Server Hosted at {0}", this.Publisher.LastEndpoint));
+            Console.WriteLine(String.Format("-- Server Hosted at {0}", this.Publisher.LastEndpoint));
 
-            this.MessageListener = new System.Threading.Thread(() => getMessages(this.IP, this.Port-1, this.Subscriber));
+            this.MessageListener = new System.Threading.Thread(() => GetMessages(this.IP, this.Port-1, this.Subscriber));
             this.MessageListener.Start();
         }
 
@@ -167,6 +168,8 @@ namespace Common.Networking {
 
         public void StopServer() {
             this.CanRun = false;
+            this.Publisher.Close();
+            this.Subscriber.Close();
             Console.WriteLine("Server Closed!");
             this.MessageListener.Abort();
             Console.WriteLine("Listener Stopped!");

@@ -20,10 +20,10 @@ namespace Common.Commands.ClientSide {
         override public void RunCommand(Object sender, String[] args) {
             try {
                 if (args.Length == 0) {
-                    ((Client)sender).Connect(new Server().IP, new Server().DefaultPort);
+                    ((Client)sender).Connect(IPAddress.Parse("127.0.0.1"), new Client().DefaultPort);
                 }else
                     if (args.Length == 1) {
-                        ((Client)sender).Connect(IPAddress.Parse(args[0]), new Server().DefaultPort);
+                        ((Client)sender).Connect(IPAddress.Parse(args[0]), new Client().DefaultPort);
                     } else if(args.Length == 2) {
                     ((Client)sender).Connect(IPAddress.Parse(args[0]), int.Parse(args[1]));
                 }

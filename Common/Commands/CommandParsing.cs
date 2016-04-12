@@ -43,9 +43,9 @@ namespace Common.Commands {
                         y[i - 1] = x[i].ToLower();
                     }
 
-                    if (s.StartsWith("/")) GetCommand(x[0]).RunCommand(sender, y);
+                    if (s.StartsWith("/")) GetCommand(((Networking.Common)sender).Side, x[0]).RunCommand(sender, y);
                 } catch (IndexOutOfRangeException e) {
-                    if (s.StartsWith("/")) GetCommand(s.Substring(1)).RunCommand(sender, new String[0]);
+                    if (s.StartsWith("/")) GetCommand(((Networking.Common)sender).Side, s.Substring(1)).RunCommand(sender, new String[0]);
                 }
             } catch (NullReferenceException e) {
                 //Methods.Debug(e);
@@ -59,22 +59,26 @@ namespace Common.Commands {
             }
         }
 
-        private Command GetCommand(String s) {
+        private Command GetCommand(Sides side, String s) {
             for (int i = 0; i < CommandList.CommonCommands.Length; i++) {
                 if (CommandList.CommonCommands[i].GetCommandName() == s) {
                     return CommandList.CommonCommands[i];
                 }
             }
 
-            for (int i = 0; i < CommandList.ClientCommands.Length; i++) {
-                if (CommandList.ClientCommands[i].GetCommandName() == s) {
-                    return CommandList.ClientCommands[i];
+            if (side.Equals(Sides.CLIENT)){
+                for (int i = 0; i < CommandList.ClientCommands.Length; i++) {
+                    if (CommandList.ClientCommands[i].GetCommandName() == s) {
+                        return CommandList.ClientCommands[i];
+                    }
                 }
             }
 
-            for (int i = 0; i < CommandList.ServerCommands.Length; i++) {
-                if (CommandList.ServerCommands[i].GetCommandName() == s) {
-                    return CommandList.ServerCommands[i];
+            if (side.Equals(Sides.SERVER)) {
+                for (int i = 0; i < CommandList.ServerCommands.Length; i++) {
+                    if (CommandList.ServerCommands[i].GetCommandName() == s) {
+                        return CommandList.ServerCommands[i];
+                    }
                 }
             }
 

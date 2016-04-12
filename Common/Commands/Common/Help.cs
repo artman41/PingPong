@@ -20,7 +20,7 @@ namespace Common.Commands.Common {
 
                 Console.WriteLine(((Networking.Common)sender).Side + ">> " + "These are the available commands: ");
 
-                if (sender.GetType().Equals(new Client().GetType())) {
+                if (((Networking.Common)sender).Side.Equals(Sides.CLIENT)) {
                     for (int i = 0; i < CommandList.ClientCommands.Length; i++) {
                         Console.WriteLine(" -> " + CommandList.ClientCommands[i].Text);
                     }
@@ -44,7 +44,7 @@ namespace Common.Commands.Common {
                     }
                 }
 
-                if (sender.GetType().Equals(new Client().GetType())) {
+                if (((Networking.Common)sender).Side.Equals(Sides.CLIENT)) {
                     for (int i = 0; i < CommandList.ClientCommands.Length; i++) {
                         if (CommandList.ClientCommands[i].GetCommandName() == args[0] && !foundCommand) {
                             Console.WriteLine("Description: " + CommandList.ClientCommands[i].Description);
